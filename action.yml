@@ -1,18 +1,18 @@
-name: 'tftools'
-description: 'Install terraform tools'
+name: 'aws-terraform-tools'
+description: 'Install terraform tool stack'
 inputs:
   tfenv-version:
-    description: 'Version of tfenv to install'
+    description: 'tfenv version to install'
     required: false
     default: '2.2.2'
   tgenv-version:
-    description: 'Version of tgenv to install'
+    description: 'tgenv version to install'
     required: false
     default: '0.1.0'
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/install_tftools.sh
+    - run: ${{ github.action_path }}/install.sh
       env:
         TFENV_VERSION: ${{ inputs.tfenv-version }}
         TGENV_VERSION: ${{ inputs.tgenv-version }}
