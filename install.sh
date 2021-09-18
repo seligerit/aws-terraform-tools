@@ -14,8 +14,6 @@ TGENV_INSTALLDIR="${TOOLS_INSTALLDIR}/tgenv"
 
 mkdir -p "${TOOLS_INSTALLDIR}" "${TOOLS_BINDIR}" "${TFENV_INSTALLDIR}" "${TGENV_INSTALLDIR}"
 
-export PATH="${TOOLS_BINDIR}:${PATH}"
-
 function create_symlinks {
   local SRC DST
   for SRC in "${@}"; do
@@ -23,6 +21,9 @@ function create_symlinks {
     [ -e "${DST}" ] || ln -s "${SRC}" "${DST}"
   done;
 }
+
+# Add tools bindir to this scripts path
+export PATH="${TOOLS_BINDIR}:${PATH}"
 
 #
 # Install tfenv and link binaries
@@ -53,5 +54,5 @@ echo "Install latest terragrunt"
 tgenv install
 tgenv use
 
-# Add tools bindir to path
-echo "${TOOLS_INSTALLDIR}/bin" >> "${GITHUB_PATH}"
+# Add tools bindir to github path
+echo "${TOOLS_BINDIR}" >> "${GITHUB_PATH}"
