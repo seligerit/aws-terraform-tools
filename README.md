@@ -1,6 +1,6 @@
 # aws-terraform-tools action
 
-This action installs the tools [tfenv](https://github.com/tfutils/tfenv) and [tgenv](https://github.com/taosmountain/tgenv), adds them to github actions path and uses them to install the latest terrafrom and terragrunt version.
+This action installs the tools [tfenv](https://github.com/tfutils/tfenv) and [tgenv](https://github.com/taosmountain/tgenv), adds them to github actions path and uses them to install the latest terraform and terragrunt version.
 
 ## Inputs
 

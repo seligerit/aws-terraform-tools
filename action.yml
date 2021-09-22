@@ -12,7 +12,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/install.sh
+    - run: ${{ github.action_path }}/scripts/install_tools.sh
       env:
         TFENV_VERSION: ${{ inputs.tfenv-version }}
         TGENV_VERSION: ${{ inputs.tgenv-version }}
